@@ -1,0 +1,3 @@
+- npm update <pacote>
+- npx cpm-check-updates -u // para checar todos os pacotes logo apos digitar:
+  - npm install

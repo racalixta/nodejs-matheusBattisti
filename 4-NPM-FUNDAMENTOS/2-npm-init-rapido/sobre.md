@@ -1,0 +1,2 @@
+- npm init -y
+  - para criar um projeto rápido, dará yes em todas as perguntas do npm init
