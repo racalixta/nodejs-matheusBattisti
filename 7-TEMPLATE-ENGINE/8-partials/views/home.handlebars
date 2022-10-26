@@ -1,0 +1,24 @@
+<h1>Olá Handlebars!</h1>
+
+<p>
+  O nome do usuário é {{user.name}} {{user.surname}} e tem {{user.age}} anos
+</p>
+
+{{#if auth}}
+  <p>
+    Você está autenticado, <a href="/dashboard">clique aqui</a> para ir para área de membros!
+  </p>
+
+{{/if}}
+
+
+{{#if approved}}
+
+  <h4>O texto foi aprovado!</h4>
+
+{{else}}
+  <h4>O texto NÃO foi aprovado!</h4>
+{{/if}}
+
+
+<h3><a href="/post">Blogpost</a></h3>
