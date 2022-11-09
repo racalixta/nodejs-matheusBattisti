@@ -30,15 +30,19 @@ module.exports = class ProductController {
 
   static async getProduct(req, res) {
     const id = req.params.id;
-
+    // console.log(id)
+    
     const product = await Product.getProductById(id);
+    // console.log(product._id)
 
     res.render('products/product', { product });
     
   }
 
   static async removeProduct(req, res) {
-    const id = req.params.id
+    const id = req.params.id;
+
+    // console.log(id)
 
     await Product.removeProductById(id);
 
