@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const app = express()
+const app = express();
+
+const UserRoutes = require('./routes/UserRoutes');
 
 // config json response
 app.use(express.json());
@@ -13,7 +15,7 @@ app.use(express.static('public'));
 
 // routes
 
-
+app.use('/users', UserRoutes)
 
 
 
