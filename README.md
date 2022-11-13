@@ -24,9 +24,9 @@
 - [x] Seção 09 - Utilizando o Sequelize com Node.js
 - [x] Seção 10 - Arquitetura MVC com Node.js
 - [x] Seção 11 - Projeto 2 Toughts (Express, Sequelize e MVC)
-- [ ] Seção 12 - Node.js com MongoDB
-- [ ] Seção 13 - Adaptando Mongoose ao nosso projeto
-- [ ] Seção 14 - Introdução a APIs
-- [ ] Seção 15 - Proejeto 3 Get a Pet (API, RESTful, Express, MVC, MongoDB com Mongoose  e React)
+- [x] Seção 12 - Node.js com MongoDB
+- [x] Seção 13 - Adaptando Mongoose ao nosso projeto
+- [x] Seção 14 - Introdução a APIs
+- [ ] Seção 15 - Projeto 3 Get a Pet (API, RESTful, Express, MVC, MongoDB com Mongoose  e React)
 
 ---
