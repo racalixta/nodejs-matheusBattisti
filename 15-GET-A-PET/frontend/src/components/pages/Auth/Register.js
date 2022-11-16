@@ -11,15 +11,13 @@ function Register() {
   const { register } = useContext(Context)
 
   function handleChange(e) {
-    setUser({...user, [e.target.name]: e.target.value})
+    setUser({ ...user, [e.target.name]: e.target.value });
+
   }
 
   function handleSubmit(e) {
-    e.preventDeafult();
-    
+    e.preventDefault();
     register(user);
-    
-
 
   }
 
@@ -64,7 +62,7 @@ function Register() {
         <Input 
           text="Confirmação de senha"
           type="password"
-          name="comfirmpassword"
+          name="confirmpassword"
           placeholder="Confirme sua senha"
           handleOnChange={handleChange}
         />
