@@ -70,7 +70,7 @@ module.exports = class PetController {
 
     try {
       const newPet = await pet.save();
-      res.status(201).json({ messag: 'Pet cadastrado com sucesso!', newPet})
+      res.status(201).json({ message: 'Pet cadastrado com sucesso!', newPet})
 
     } catch(err) {
       req.status(500).json({ message: err })
