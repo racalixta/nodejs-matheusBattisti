@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from '../../../utils/api';
-import styles from './Dashboard.module.css'
+import styles from './Dashboard.module.css';
 
 import RoundedImage from '../../layout/RoundedImage';
 
@@ -15,7 +15,7 @@ function MyPets() {
 
   useEffect(() => {
     api.get('/pets/mypets', {
-      header: {
+      headers: {
         Authorization: `Bearer ${JSON.parse(token)}`
       }
     })
@@ -49,11 +49,31 @@ function MyPets() {
 
   }
 
+  async function concludeAdoption(id) {
+    let msgType = 'success';
+    
+    const data = await api.patch(`/pets/conclude/${id}`, {
+      headers: {
+        Authorization: `Bearer ${JSON.parse(token)}`
+      }
+    })
+    .then((response) => {
+      return response.data
+
+    }).catch((err) => {
+      msgType = 'error';
+      return err.response.data
+
+    })
+
+    setFlashMessage(data.message, msgType)
+
+  }
   
   return (
     <section>
       <div className={styles.petlist_header}>
-        <h1>MyPets</h1>
+        <h1>Meus Pets</h1>
         <Link to="/pet/add">Cadastrar Pet</Link>
 
       </div>
@@ -74,7 +94,11 @@ function MyPets() {
                  (
                   <>
                     {pet.adopter && (
-                      <button className={styles.conclude_btn}>Concluir Adoção</button>
+                      <button className={styles.conclude_btn} onClick={() => {
+                        concludeAdoption(pet._id)
+                      }}>
+                        Concluir Adoção
+                      </button>
                     )}
                     <Link to={`/pet/edit/${pet._id}`}>Editar</Link>
                     <button onClick={() => {
